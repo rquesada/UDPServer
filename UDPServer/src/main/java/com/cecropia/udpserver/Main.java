@@ -7,6 +7,7 @@ package com.cecropia.udpserver;
 
 import java.io.*;
 import java.net.*;
+import java.util.Random;
 
 /**
  *
@@ -30,6 +31,10 @@ public class Main {
                   String capitalizedSentence = sentence.toUpperCase();
                   if (sentence.contains("connect:")){
                       capitalizedSentence="connections:192.168.100.1:192.168.100.2:192.168.100.3";
+                  }else if(sentence.contains("sent")){
+                      Random rand = new Random();
+                      int randInt = rand.nextInt(100);
+                      capitalizedSentence = "Hola tu " + randInt;
                   }
                   
                   
